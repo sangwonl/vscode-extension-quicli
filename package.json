@@ -2,7 +2,7 @@
   "name": "quicli",
   "displayName": "QuiCLI",
   "description": "Quickly run command line written on editor.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/sangwonl/vscode-extension-quicli.git"
@@ -27,15 +27,23 @@
       }
     ]
   },
+  "lint-staged": {
+    "**/*": [
+      "eslint src --ext ts",
+      "prettier --write '**/*.{ts,js}' --ignore-unknown"
+    ]
+  },
   "scripts": {
+    "prepare": "husky install",
     "compile": "tsc -p ./",
     "login": "vsce login gamz",
     "package": "vsce package",
     "publish": "vsce publish",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "format": "prettier --write '**/*.{ts,js}' --ignore-unknown"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -48,7 +56,10 @@
     "@vscode/vsce": "^2.20.1",
     "eslint": "^8.41.0",
     "glob": "^8.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "mocha": "^10.2.0",
+    "prettier": "3.0.1",
     "typescript": "^5.1.3"
   }
 }
