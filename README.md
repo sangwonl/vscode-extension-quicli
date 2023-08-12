@@ -4,6 +4,8 @@ This is a simple extension that executes shell command written in the editor on 
 
 ![demo](assets/demo.gif)
 
+> Captured by [CropMon](https://cropmon.pineple.com)
+
 ## Features
 
 - Run command on editor in terminal
