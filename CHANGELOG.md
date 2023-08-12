@@ -1,9 +1,9 @@
 # Change Log
 
-All notable changes to the "hello" extension will be documented in this file.
+## 0.0.2 (latest)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Add auto multiline shell command extracter
 
-## [Unreleased]
+## 0.0.1
 
 - Initial release

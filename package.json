@@ -1,13 +1,23 @@
 {
   "name": "quicli",
   "displayName": "QuiCLI",
-  "description": "Quickly run command line written on editor.",
+  "description": "Run shell command on the fly",
   "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/sangwonl/vscode-extension-quicli.git"
   },
+  "bugs": {
+    "url": "https://github.com/sangwonl/vscode-extension-quicli/issues"
+  },
+  "icon": "assets/icon.png",
   "publisher": "gamz",
+  "author": {
+    "name": "Sangwon Lee",
+    "email": "gamzabaw@gmail.com",
+    "url": "https://github.com/sangwonl"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -28,9 +38,9 @@
     ]
   },
   "lint-staged": {
-    "**/*": [
-      "eslint src --ext ts",
-      "prettier --write '**/*.{ts,js}' --ignore-unknown"
+    "src/**/*.{ts,js}": [
+      "eslint src --cache",
+      "prettier --write --ignore-unknown"
     ]
   },
   "scripts": {
@@ -42,8 +52,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "test": "node ./out/test/runTest.js",
-    "lint": "eslint src --ext ts",
-    "format": "prettier --write '**/*.{ts,js}' --ignore-unknown"
+    "lint": "eslint src --ext .ts,.js",
+    "format": "prettier --write 'src/**/*.{ts,js}' --ignore-unknown"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
